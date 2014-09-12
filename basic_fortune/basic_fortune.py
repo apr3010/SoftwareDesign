@@ -18,7 +18,7 @@ def fortune():
    length of the name or string that a user inputs.
    """
    username = raw_input('what is your name?')
-   fortuner = ['Enjoy your days while you can', 'Happiness will soon find you', 'Things are not looking up', 'Be careful what you wish for', 'You will be greeted with a gift in the near future', 'The sky will fall on you tomorrow']
+   fortuner = ['You wish you could win the lottery', 'Happiness will soon find you', 'Things are not looking up', 'Be careful what you wish for', 'You will be greeted with a gift in the near future', 'The sky will fall on you tomorrow']
    print fortuner[(len(username)-1)%len(fortuner)]
 
 fortune()
