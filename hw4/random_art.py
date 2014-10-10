@@ -19,8 +19,8 @@ Created on Sun Oct  5 19:43:22 2014
 from random import randint
 from PIL import Image
 
-min_depth = 4
-max_depth = 40
+min_depth = 8
+max_depth = 8
 def build_random_function(min_depth, max_depth):
     """This function takes in a minimum and maximum depth and generates a pseudo
     function with all the types of functions I have chosen, which include product,
@@ -99,13 +99,12 @@ def remap_interval(val, input_interval_start, input_interval_end, output_interva
 
 p1 = 500 #x pixel value for image
 p2 = 500 #y pixel value for image
+image = Image.new('RGB',(p1,p2)) #creates an empty RGB image
 def mapping():
-   """ What the mapping function does is generate random functions for RGB channels and 
-   evaluates those functions for the pixel dimensions of the image. It also takes those mapped
-   values and maps them again to an actual RGB value.
-   """
-   
-    image = Image.new('RGB',(p1,p2)) #creates an empty RGB image
+    """ What the mapping function does is generate random functions for RGB channels and 
+    evaluates those functions for the pixel dimensions of the image. It also takes those mapped
+    values and maps them again to an actual RGB value.
+    """
 
     R = build_random_function(min_depth,max_depth) #creates random function for red
     G = build_random_function(min_depth,max_depth) #creates random function for green
@@ -128,7 +127,7 @@ def mapping():
             #print(R2,G2,B2)
             # puts RGB values into an image
             image.putpixel((x,y),(int(R2),int(G2),int(B2)))
-    image.save('again3' + '.jpg') #saves my image :) - life is great!
+    image.save('again6a' + '.jpg') #saves my image :) - life is great!
             
 mapping()
 
